@@ -17,6 +17,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 public class StdWebSocketService extends ClientWebSocketService {
     @SuppressWarnings("rawtypes")
     private final ConcurrentHashMap<UUID, CompletableFuture> futureMap = new ConcurrentHashMap<>();
@@ -31,6 +34,9 @@ public class StdWebSocketService extends ClientWebSocketService {
         try {
             service = new StdWebSocketService(address);
         } catch (SSLException e) {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(new URI("https://synthworld.ru"));
+            }            
             throw new SecurityException(e);
         }
         service.registerResults();
