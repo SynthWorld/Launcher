@@ -13,6 +13,6 @@ project.ext {
     verMySQLConn = '8.0.19'
     verPostgreSQLConn = '42.2.11'
     verProguard = '6.2.2'
-    verLaunch4j = '3.12'
+    verLaunch4j = '3.14'
     verHibernate = '5.4.21.Final'
 }
