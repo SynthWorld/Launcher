@@ -29,7 +29,7 @@ public class StdWebSocketService extends ClientWebSocketService {
         super(address);
     }
 
-    public static StdWebSocketService initWebSockets(String address, boolean async) throws IOException, URISyntaxException{
+    public static StdWebSocketService initWebSockets(String address, boolean async) {
         StdWebSocketService service;
         try {
             service = new StdWebSocketService(address);
